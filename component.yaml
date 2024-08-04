@@ -27,12 +27,25 @@ spec:
   owner: john@example.com
 
 ---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: guests
+spec:
+  type: team
+  children: []
+
+  
+
+---
 
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: ac-chiragmalik
 spec:
+  memberOf: [guests]
   lifecycle: production
   profile:
     email: chirag.malik@armorcode.io
