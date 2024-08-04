@@ -1,42 +1,6 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: example-service
-  description: A service for demonstrating Backstage component registration
-  tags:
-    - demo
-    - example
-spec:
-  type: service
-  lifecycle: production
-  owner: team-a
-  system: example-system
-  providesApis: []
-  consumesApis: []
-  dependsOn: []
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: another-service
-  description: Another service as part of the example system
-  tags:
-    - sample
-spec:
-  type: service
-  lifecycle: development
-  owner: team-b
-  system: example-system
-  providesApis: []
-  consumesApis: []
-  dependsOn:
-    - component: example-service
-
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
   name: backstage
   description: An example of a Backstage application.
   # Example for optional annotations
@@ -54,7 +18,7 @@ kind: User
 metadata:
   name: ac-chiragmalik
 spec:
-  memberOf: [guests]
+lifecycle: production
   profile:
     email: chirag.malik@armorcode.io
     displayName: ac-chiragmalik
